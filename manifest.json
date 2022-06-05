@@ -1,0 +1,22 @@
+{
+    "name": "R10 chrome eklentisi",
+    "version": "1.0",
+    "manifest_version": 2,
+    "description": "Bu bir google chrome eklentisidir.",
+    "browser_action": {
+        "default_icon" : "icon.png",  
+        "default_popup" : "pencere.html"
+    },
+    "permissions": [
+        "tabs",
+        "https://www.r10.net/*"
+    ],
+    "background": {
+        "scripts": ["./script.js"]
+    },
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "js": ["script.js"],
+        "all_frames": true
+    }]
+}
